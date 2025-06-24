@@ -3,7 +3,7 @@ import GoogleProvider from 'next-auth/providers/google'
 import GithubProvider from 'next-auth/providers/github'
 import connectDB from '@/db/connectDb'
 import User from '@/models/User'
-import Payment from '@/models/Payment'
+
 
 const Handler = NextAuth({
   providers: [

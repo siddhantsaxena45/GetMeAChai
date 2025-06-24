@@ -11,17 +11,20 @@ const Navbar = () => {
 
   return (
     <div className='flex justify-between items-center px-4 py-2 bg-blue-950 text-white'>
-      <Link href="/"><div className="flex justify-center items-center">  <div className="w-16"><img src="./chai.gif" alt="" /></div><div className="text-2xl font-bold">Get me a chai</div>
+      <Link href="/"><div className="flex justify-center items-center">  <div className="w-16"><img src="./chai.gif" alt="" /></div><div className="text-2xl font-bold hover:underline hover:cursor-pointer">Get me a chai</div>
       </div>
       </Link>
+      
 
       <div className='flex gap-4 relative'>
-
+        <Link href={"/creators"}>
+        <button type="button" className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Explore creators</button>
+      </Link>
         {
           session && (
             <>
 
-              <button onClick={() =>  setshowdropdown(!showdropdown) } onBlur={() => {
+              <button onClick={() => setshowdropdown(!showdropdown)} onBlur={() => {
                 setTimeout(() => {
                   setshowdropdown(false)
                 }, 300)
@@ -45,7 +48,7 @@ const Navbar = () => {
                   </li>
 
                   <li>
-                    <Link onClick={() => signOut() } href="" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</Link>
+                    <Link onClick={() => signOut()} href="" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</Link>
                   </li>
                 </ul>
               </div>
@@ -54,6 +57,7 @@ const Navbar = () => {
 
 
               <button onClick={() => signOut()} type="button" className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Logout</button>
+
 
             </>
           )}
