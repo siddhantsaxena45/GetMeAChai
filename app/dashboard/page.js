@@ -8,7 +8,7 @@ import { v4 as uuidv4 } from 'uuid';
 const dashboard = () => {
   const { data: session } = useSession();
   const router = useRouter();
-
+  
   // Form state
   const [form, setForm] = useState({
     id: "",
@@ -42,6 +42,8 @@ const dashboard = () => {
     console.log("Form submitted:", form);
     // You can send this data to your backend API
   };
+
+  console.log("Client-side session:", session); 
   return (
     <div>
       <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white text-center mt-8">Welcome</h2>
