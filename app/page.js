@@ -5,8 +5,8 @@ export default function Home() {
   return (
     <>
       <div className="container p-2 mx-auto min-h-[40vh] flex flex-col justify-center items-center text-white gap-3">
-        <div className="flex justify-center items-center text-center">  <div className="text-5xl font-bold">Buy me a chai</div>
-          <div className="w-16"><img src="./chai.gif" alt="" /></div>
+        <div className="flex justify-center items-center text-center">  <div className="text-4xl md:text-5xl font-bold">Buy me a chai</div>
+          <div className="w-22 md:w-18"><img src="./chai.gif" alt="" /></div>
         </div>
         <p>A crowd funding platform for the creators . We help you raise funds for your projects and ideas . </p>
         <div className="flex gap-2">

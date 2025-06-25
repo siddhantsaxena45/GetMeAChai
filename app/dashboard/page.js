@@ -55,21 +55,26 @@ const Dashboard = () => {
         formData.append(key, form[key]);
       }
 
-      const result = await updateProfile(formData, session.user.name);
+      const previousUsername = session.user.name;
+      const result = await updateProfile(formData, previousUsername);
+
       if (result?.error) {
         alert(result.error);
       } else {
-
         toast('Profile Updated', {
           position: "top-right",
           autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: false,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
           theme: "light",
           transition: Bounce,
+        });
+
+        // ✅ Update the session
+        await update({
+          ...session,
+          user: {
+            ...session.user,
+            name: form.username, // set new username
+          }
         });
       }
     } catch (err) {
@@ -77,6 +82,7 @@ const Dashboard = () => {
       alert("❌ Failed to update profile");
     }
   };
+
 
 
 
@@ -96,7 +102,7 @@ const Dashboard = () => {
         transition={Bounce}
       />
       <div className='container mx-auto p-3 md:max-h-[80vh]'>
-      <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white text-center mt-8">Welcome</h2>
+        <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white text-center mt-8">Welcome</h2>
 
 
         <form className="max-w-sm mx-auto" action={handleSubmit}>

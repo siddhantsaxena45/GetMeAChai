@@ -1,25 +1,23 @@
 "use client"
 import React from 'react'
 import Link from 'next/link'
-import { useState } from 'react'
+
 import { useSession, signIn, signOut } from "next-auth/react"
+import { useEffect, useState } from 'react';
+
 const Navbar = () => {
   const { data: session } = useSession()
-
   const [showdropdown, setshowdropdown] = useState(false)
-
-
+  
   return (
-    <div className='flex justify-between items-center px-4 py-2 bg-blue-950 text-white'>
-      <Link href="/"><div className="flex justify-center items-center">  <div className="w-16"><img src="./chai.gif" alt="" /></div><div className="text-2xl font-bold hover:underline hover:cursor-pointer">Get me a chai</div>
+    <div className='flex justify-center md:justify-between items-center px-4 py-2 gap-2 flex-wrap bg-blue-950 text-white'>
+      <Link href="/"><div className="flex justify-center items-center">  <div className="w-10 md:w-12"><img src="./chai.gif" alt="" /></div><div className="text-2xl font-bold hover:underline hover:cursor-pointer">Get me a chai</div>
       </div>
       </Link>
-      
 
-      <div className='flex gap-4 relative'>
-        <Link href={"/creators"}>
-        <button type="button" className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Explore creators</button>
-      </Link>
+
+      <div className='flex gap-2 relative'>
+
         {
           session && (
             <>
@@ -29,7 +27,7 @@ const Navbar = () => {
                   setshowdropdown(false)
                 }, 300)
               }}
-                id="dropdownDefaultButton" data-dropdown-toggle="dropdown" className=" text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 h-[40px]" type="button">Dropdown<svg className="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                id="dropdownDefaultButton" data-dropdown-toggle="dropdown" className=" text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 h-[40px]" type="button">Menu<svg className="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                   <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
                 </svg>
               </button>
@@ -56,12 +54,13 @@ const Navbar = () => {
 
 
 
-              <button onClick={() => signOut()} type="button" className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Logout</button>
 
 
             </>
           )}
-
+        <Link href={"/creators"}>
+          <button type="button" className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">creators</button>
+        </Link>
         {!session && (
           <>
             <Link href={'/login'}>
