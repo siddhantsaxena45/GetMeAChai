@@ -26,3 +26,9 @@ await check();
 
 export default Username;
 
+export async function generateMetadata({ params }) {
+  const { username } = await params;
+  return {
+    title: `Supporters for ${username}`,
+  };
+}

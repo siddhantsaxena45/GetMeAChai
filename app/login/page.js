@@ -8,6 +8,7 @@ const Login = () => {
     const { data: session, status } = useSession()
 
     useEffect(() => {
+        document.title = 'Login to Get Me A Chai';
         if (status === 'authenticated') {
             router.push('/dashboard')
         }

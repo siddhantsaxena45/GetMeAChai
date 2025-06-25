@@ -7,6 +7,7 @@ const CreatorsPage = () => {
   const router = useRouter();
 
   useEffect(() => {
+    document.title = 'Support a Creator';
     const fetchCreators = async () => {
       try {
         const res = await fetch('/api/creators');
@@ -56,3 +57,4 @@ const CreatorsPage = () => {
 };
 
 export default CreatorsPage;
+
