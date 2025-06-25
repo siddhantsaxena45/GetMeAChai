@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "mongodb": "^6.17.0",
     "mongoose": "^8.16.0",
     "next": "15.3.4",
     "next-auth": "^4.24.11",
@@ -16,6 +17,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-toastify": "^11.0.5",
+    "tailwind-scrollbar": "^4.0.2",
     "uuid": "^11.1.0"
   },
   "devDependencies": {

@@ -47,7 +47,9 @@ const PaymentPage = ({ username }) => {
         transition: Bounce,
       });
     }
-    router.push(`/${username}`);
+     setTimeout(() => {
+      router.push(`/${username}`);
+    }, 3000);
 
   }, []);
 
@@ -79,9 +81,7 @@ const PaymentPage = ({ username }) => {
     try {
       const order = await initiate(amount, username, paymentform);
       setOrderId(order.id);
-
-      const options = {
-        // key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
+const options = {
         key: userData.razorpay_id,
         amount: order.amount,
         currency: 'INR',
@@ -97,8 +97,16 @@ const PaymentPage = ({ username }) => {
         theme: {
           color: '#F37254',
         },
+        modal: {
+          escape: true,
+          animation: true,
+          backdropclose: true,
+          ondismiss: () => console.log("Modal closed"),
+        },
+        external: {
+          wallets: ['paytm'], // optionally support wallets
+        },
       };
-
       const razorpay = new window.Razorpay(options);
       razorpay.open();
 
@@ -150,26 +158,27 @@ const PaymentPage = ({ username }) => {
       </div>
 
       <div className='flex flex-col md:flex-row justify-center items-center gap-4 m-4 md:m-10'>
-        <div className='w-full md:w-1/2 bg-gray-800 p-10 rounded-3xl md:h-[50vh]'>
+        <div className='w-full md:w-1/2 bg-gray-800 p-10 rounded-3xl h-[50vh] md:h-[50vh]'>
           <h3 className='text-4xl font-bold mb-3 text-center'>Supporters</h3>
 
-          <ul className='overflow-y-scroll scrollbar-thin h-[80%]'>
+          <ul className='overflow-y-scroll custom-scrollbar h-[80%]'>
             {supporters.length === 0 ? (
               <li className='text-center mt-4 text-gray-400'>No supporters yet</li>
             ) : (
               supporters.map((s, i) => (
-                <li key={i} className='mt-2'>
-                  <div className='flex md:flex-row flex-col justify-center items-center bg-gray-700 p-3 rounded-lg gap-2'>
+                <li key={i} className='mt-2 '>
+                  <div className='flex md:flex-row flex-col justify-start items-center bg-gray-700 p-3 rounded-lg gap-2 overflow-auto custom-scrollbar'>
                     <div className='flex gap-2 justify-center items-center'>
                       <div className='w-12 h-12 overflow-hidden rounded-full'>
                         <img src="/user.gif" alt="profile" className='object-cover w-full h-full ' />
                       </div>
                       <span className='font-bold'>{s.name || "Anonymous"}</span>
-                    </div>
-                    <div className='flex gap-2 justify-center items-center'>
                       <span>donated</span>
                       <span className='font-bold'>₹{s.amount}</span>
-                      {s.message && <span>“{s.message}”</span>}
+                    </div>
+                    <div className='flex gap-2 justify-center items-center'>
+                      
+                      {s.message && <span className='text-center'>“{s.message}”</span>}
                     </div>
                   </div>
                 </li>
@@ -188,9 +197,9 @@ const PaymentPage = ({ username }) => {
             <button onClick={() => pay(paymentform.amount)} type="button" className="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-2 py-1 md:px-5 md:py-2.5 text-center w-full disabled:opacity-50 disabled:cursor-not-allowed" disabled={possible2 } >Pay</button>
           </div>
           <div className='flex justify-center  items-center gap-4 '>
-            <button onClick={() => pay(10)} type="button" className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-2 py-1 md:px-5 md:py-2.5 text-center disabled:opacity-50 disabled:cursor-not-allowed"  disabled={possible}>Pay ₹10</button>
-            <button onClick={() => pay(20)} type="button" className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-2 py-1 md:px-5 md:py-2.5 text-center disabled:opacity-50 disabled:cursor-not-allowed" disabled={possible}>Pay ₹20</button>
-            <button onClick={() => pay(30)} type="button" className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-2 py-1 md:px-5 md:py-2.5 text-center disabled:opacity-50 disabled:cursor-not-allowed" disabled={possible}>Pay ₹30</button>
+            <button onClick={() => pay(10)} type="button" className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-2 py-1 sm:px-5 sm:py-2.5 whitespace-nowrap text-center disabled:opacity-50 disabled:cursor-not-allowed"  disabled={possible}>Pay ₹10</button>
+            <button onClick={() => pay(20)} type="button" className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-2 py-1 sm:px-5 sm:py-2.5 whitespace-nowrap text-center disabled:opacity-50 disabled:cursor-not-allowed" disabled={possible}>Pay ₹20</button>
+            <button onClick={() => pay(30)} type="button" className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-2 py-1 sm:px-5 sm:py-2.5 whitespace-nowrap text-center disabled:opacity-50 disabled:cursor-not-allowed" disabled={possible}>Pay ₹30</button>
           </div>
         </div>
       </div>

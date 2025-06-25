@@ -62,7 +62,7 @@ const Dashboard = () => {
         alert(result.error);
       } else {
         toast('Profile Updated', {
-          position: "top-right",
+          position: "top-left",
           autoClose: 5000,
           theme: "light",
           transition: Bounce,
