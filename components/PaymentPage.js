@@ -47,9 +47,9 @@ const PaymentPage = ({ username }) => {
         transition: Bounce,
       });
     }
-     setTimeout(() => {
+     
       router.push(`/${username}`);
-    }, 3000);
+   
 
   }, []);
 
