@@ -102,37 +102,37 @@ const Dashboard = () => {
         transition={Bounce}
       />
       <div className='container mx-auto p-3 md:max-h-[80vh]'>
-        <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white text-center mt-8">Welcome</h2>
+        <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-white text-center mt-8">Welcome</h2>
 
 
         <form className="max-w-sm mx-auto" action={handleSubmit}>
 
           <div>
-            <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
+            <label htmlFor="name" className="block mb-2 text-sm font-medium">Name</label>
             <input value={form.name ? form.name : ""} onChange={handleChange} type="text" id="name" name="name" className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
           </div>
           <div>
-            <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+            <label htmlFor="email" className="block mb-2 text-sm font-medium">Email</label>
             <input value={form.email ? form.email : ""} onChange={handleChange} type="text" id="email" name="email" className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
           </div>
           <div>
-            <label htmlFor="username" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Username</label>
+            <label htmlFor="username" className="block mb-2 text-sm font-medium ">Username</label>
             <input value={form.username ? form.username : ""} onChange={handleChange} type="text" id="username" name="username" className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
           </div>
           <div>
-            <label htmlFor="profilepic" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">profile picture</label>
+            <label htmlFor="profilepic" className="block mb-2 text-sm font-medium">profile picture</label>
             <input value={form.profilepic ? form.profilepic : ""} onChange={handleChange} type="text" id="profilepic" name="profilepic" className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
           </div>
           <div>
-            <label htmlFor="coverpic" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Cover</label>
+            <label htmlFor="coverpic" className="block mb-2 text-sm font-medium">Cover</label>
             <input value={form.coverpic ? form.coverpic : ""} onChange={handleChange} type="text" id="coverpic" name="coverpic" className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
           </div>
           <div>
-            <label htmlFor="razorpay_secret" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">RazorPay Secret</label>
+            <label htmlFor="razorpay_secret" className="block mb-2 text-sm font-medium ">RazorPay Secret</label>
             <input value={form.razorpay_secret ? form.razorpay_secret : ""} onChange={handleChange} type="text" id="razorpay_secret" name="razorpay_secret" className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:boidlue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
           </div>
           <div>
-            <label htmlFor="razorpay_id" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">RazorPay id</label>
+            <label htmlFor="razorpay_id" className="block mb-2 text-sm font-medium ">RazorPay id</label>
             <input value={form.razorpay_id ? form.razorpay_id : ""} onChange={handleChange} type="text" id="razorpay_id" name="razorpay_id" className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
           </div>
 
