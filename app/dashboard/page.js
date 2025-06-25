@@ -123,18 +123,19 @@ const Dashboard = () => {
             <label htmlFor="profilepic" className="block mb-2 text-sm font-medium">profile picture</label>
             <input value={form.profilepic ? form.profilepic : ""} onChange={handleChange} type="text" id="profilepic" name="profilepic" className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
           </div>
-          <div>
+          {/* <div>
             <label htmlFor="coverpic" className="block mb-2 text-sm font-medium">Cover</label>
             <input value={form.coverpic ? form.coverpic : ""} onChange={handleChange} type="text" id="coverpic" name="coverpic" className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+          </div> */}
+           <div>
+            <label htmlFor="razorpay_id" className="block mb-2 text-sm font-medium ">RazorPay id</label>
+            <input value={form.razorpay_id ? form.razorpay_id : ""} onChange={handleChange} type="text" id="razorpay_id" name="razorpay_id" className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
           </div>
           <div>
             <label htmlFor="razorpay_secret" className="block mb-2 text-sm font-medium ">RazorPay Secret</label>
             <input value={form.razorpay_secret ? form.razorpay_secret : ""} onChange={handleChange} type="text" id="razorpay_secret" name="razorpay_secret" className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:boidlue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
           </div>
-          <div>
-            <label htmlFor="razorpay_id" className="block mb-2 text-sm font-medium ">RazorPay id</label>
-            <input value={form.razorpay_id ? form.razorpay_id : ""} onChange={handleChange} type="text" id="razorpay_id" name="razorpay_id" className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
-          </div>
+         
 
           <div>
             <button type="button" onClick={handleSubmit} className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 w-full mt-3 ">Submit</button>
