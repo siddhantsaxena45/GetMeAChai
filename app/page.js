@@ -14,7 +14,7 @@ export default function Home() {
           <button type="button" className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Start Now</button>
           </Link>
           <Link href={"/about"}>
-          <button type="button" className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Read more</button>
+          <button type="button" className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">About Us</button> 
           </Link>
         </div>
 
@@ -29,17 +29,17 @@ export default function Home() {
           <div className="flex flex-col justify-center items-center gap-2">
             <div className="w-20 h-20 rounded-full  overflow-hidden">  <img src="man.gif" alt="" className="w-full h-full object-cover rounded-full" /></div>
             <span className="font-bold text-center">Fund yourself </span>
-            <p className="w-1/2 text-center">Make a small donation to help you reach your goals</p>
+            <p className="w-1/2 text-center">Create an account to support your creator journey</p>
           </div>
           <div className="flex flex-col justify-center items-center gap-2">
             <div className="w-20 h-20  rounded-full  overflow-hidden">  <img src="coin.gif" alt="" className="w-full h-full object-cover rounded-full" /></div>
             <span className="font-bold text-center">Fund a creator</span>
-            <p className="w-1/2 text-center">Make a small donation to help you reach your goals</p>
+            <p className="w-1/2 text-center">Support your favorite creators</p>
           </div>
           <div className="flex flex-col justify-center items-center gap-2">
             <div className="w-20 h-20  rounded-full  overflow-hidden">  <img src="group.gif" alt="" className="w-full h-full object-cover rounded-full" /></div>
             <span className="font-bold text-center">Support a community</span>
-            <p className="w-1/2 text-center">Make a small donation to help you reach your goals</p>
+            <p className="w-1/2 text-center">Make a small donation to help your creators community</p>
           </div>
 
         </div>
