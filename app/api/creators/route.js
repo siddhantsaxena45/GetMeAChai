@@ -9,7 +9,7 @@ export async function GET() {
   const users = await User.find({}).select('username profilepic');
 
   const creators = await Promise.all(users.map(async (user) => {
-    const payments = await Payment.find({ to_user: user.username ,done:"true"});
+    const payments = await Payment.find({ to_user: user.username ,done:true});
     const total = payments.reduce((sum, p) => sum + (p.amount || 0), 0);
     return {
       username: user.username,
