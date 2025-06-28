@@ -33,8 +33,8 @@ export default function Home() {
           </div>
           <div className="flex flex-col justify-center items-center gap-2">
             <div className="w-20 h-20  rounded-full  overflow-hidden">  <img src="coin.gif" alt="" className="w-full h-full object-cover rounded-full" /></div>
-            <span className="font-bold text-center">Fund a creator</span>
-            <p className="w-1/2 text-center">Support your favorite creators</p>
+            <span className="font-bold text-center">Support a creator</span>
+            <p className="w-1/2 text-center">Support your favorite creators and projects</p>
           </div>
           <div className="flex flex-col justify-center items-center gap-2">
             <div className="w-20 h-20  rounded-full  overflow-hidden">  <img src="group.gif" alt="" className="w-full h-full object-cover rounded-full" /></div>
